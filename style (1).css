@@ -31,8 +31,9 @@ h1 {
     border: 1px solid red;
   }
 
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
+  mask-repeat: no-repeat;
 }
 
 #coords {
@@ -50,4 +51,36 @@ h1 {
 
 .erroCaixa {
   border: 1px solid red;
+}
+
+main {
+  display: grid;
+  justify-items: center;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 400px 400px;
+  grid-template-rows: repeat(4, auto);
+  height: 700px;
+}
+.dados {
+  width: 400px;
+  height: 400px;
+  background-color: #1f2937;
+  grid-area: (2/-1)/ 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  gap: 30px;
+  place-content: center;
+  place-self: center;
+}
+
+#map {
+  grid-row: 1 / 5;
+  place-self: center;
+}
+.btnTroca {
+  place-self: end center;
 }

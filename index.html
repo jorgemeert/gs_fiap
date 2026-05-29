@@ -13,16 +13,29 @@
     <link rel="stylesheet" href="style (1).css" />
   </head>
   <body>
+    <header>
+      <h1>OrbitFlow</h1>
+      <p>
+        Compare ou veja a eficiência energética de possíveis bases de lançamento
+        especial a partir da geolocalização
+      </p>
+    </header>
     <main>
-      <h1>Mapa Planificado - OpenStreetMap</h1>
-      <p id="coords">Clique no mapa para ver latitude e longitude.</p>
-
-      <div id="map" aria-label="Mapa OpenStreetMap"></div>
-
-      <label for="latitude">Latitude</label>
-      <input id="latitude" type="text" />
-      <button id="botao">Analisar Lançamento</button>
-      <div id="erro"></div>
+      <section>
+        <div id="map" aria-label="Mapa OpenStreetMap"></div>
+        <div class="btnTroca">
+          <button>Análise individual</button>
+          <button>Análise Comparativa</button>
+        </div>
+        <div class="dados">
+          <label for="base">Nome da Base</label>
+          <input id="base" type="text" />
+          <label for="latitude">Latitude</label>
+          <input id="latitude" type="text" />
+          <button id="botao">Analisar Lançamento</button>
+          <div id="erro"></div>
+        </div>
+      </section>
     </main>
 
     <script
