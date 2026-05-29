@@ -1,19 +1,35 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Mapa OpenStreetMap</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="style (1).css" />
   </head>
   <body>
-    <section>
+    <main>
+      <h1>Mapa Planificado - OpenStreetMap</h1>
+      <p id="coords">Clique no mapa para ver latitude e longitude.</p>
+
+      <div id="map" aria-label="Mapa OpenStreetMap"></div>
+
       <label for="latitude">Latitude</label>
       <input id="latitude" type="text" />
-
       <button id="botao">Analisar Lançamento</button>
-      <script src="script.js"></script>
       <div id="erro"></div>
-    </section>
+    </main>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="script.js"></script>
   </body>
 </html>
