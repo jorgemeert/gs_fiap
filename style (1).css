@@ -31,8 +31,9 @@ h1 {
     border: 1px solid red;
   }
 
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
+  mask-repeat: no-repeat;
 }
 
 #coords {
@@ -56,7 +57,6 @@ main {
   display: grid;
   justify-items: center;
 }
- 
 section {
   display: grid;
   grid-template-columns: 400px 400px;
