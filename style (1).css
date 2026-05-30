@@ -75,7 +75,7 @@ section {
   place-content: center;
   place-self: center;
 }
- 
+
 #map {
   grid-row: 1 / 5;
   place-self: center;
@@ -83,5 +83,7 @@ section {
 .btnTroca {
   place-self: end center;
 }
- 
- 
+
+#coords {
+  display: none;
+}

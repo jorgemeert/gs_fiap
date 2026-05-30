@@ -1,5 +1,5 @@
 // GERADOR DO MAPA
-const saoPaulo = [-23.55052, -46.633308];
+const saoPaulo = [-29.9672, -51.201884];
 const coordsText = document.getElementById("coords");
 
 const map = L.map("map").setView(saoPaulo, 12);
@@ -18,16 +18,18 @@ map.on("click", (event) => {
 
   coordsText.textContent = `Latitude: ${latFixed} | Longitude: ${lngFixed}`;
 
-  //Voltar apartir daqui commit 29/05/26!!
-  
   //Preenchimento Latitude base 1 & Latitude base 2 - Analíse Comparativa
   latitude = document.getElementById("latitude"); //Definido a constante para poder ser utilizada no evento exclusivo do analíse comparativa
   if (latitude.classList.contains("dadosComp")) {
-    console.log('oi1');
-  }else{
+    let latitude2 = document.getElementById("lat2").value;
+    if (latitude.value === "") {
+      document.getElementById("latitude").value = latFixed;
+    } else {
+      document.getElementById("lat2").value = latFixed;
+    }
+  } else {
     // Preenche o input de latitude ao clicar no mapa
-  document.getElementById("latitude").value = latFixed;  
-  console.log("oi2");
+    document.getElementById("latitude").value = latFixed;
   }
 
   if (marker) {
@@ -40,32 +42,43 @@ map.on("click", (event) => {
 });
 
 // Lógica de validação Latitude
-const btnAnalisar = document.getElementById("botao");
-let latitude = document.getElementById("latitude");
-
-btnAnalisar.addEventListener("click", () => {
-  latitude = document.getElementById("latitude").value;
-  latitude = parseFloat(latitude);
-  if (latitude < -90 || latitude > 90) {
-    document.getElementById("latitude").value = "";
-
-    document.querySelector("#erro").innerHTML = "<p>Latitude inválida </p>";
-    document.querySelector("#erro").classList.add("erro");
-    document.getElementById("latitude").classList.add("erroCaixa");
-  }
-});
 
 // Case #2 da história, matéria UX
 // Análise comparativa
 const btnComp = document.getElementById("btnComp");
 const btnInd = document.getElementById("btnInd");
 
+//Ação ao trocar para Análise Comparativa
 btnComp.addEventListener("click", () => {
-  document.querySelectorAll(".dadosInd").forEach(e => e.remove());
-  document.querySelector(".dados").innerHTML = "<label id='base1' class='dadosComp'>Nome Base 1</label> <input type='text' class='dadosComp'> <label class='dadosComp'>Latitude base 1</label> <input id='latitude' type='text' class='dadosComp'> <label id='base2' class='dadosComp'>Nome Base 2</label> <input type='text' class='dadosComp'> <label id='lat2' class='dadosComp'>Latitude base 2</label> <input type='text' class='dadosComp'> <button class='dadosComp'>Analisar lançamento</button>"
+  document.querySelectorAll(".dadosInd").forEach((e) => e.remove());
+  document.querySelector(".dados").innerHTML =
+    "<label id='base1' class='dadosComp'>Nome Base 1</label> <input type='text' class='dadosComp'> <label class='dadosComp'>Latitude base 1</label> <input id='latitude' type='text' class='dadosComp'> <label id='base2' class='dadosComp'>Nome Base 2</label> <input type='text' class='dadosComp'> <label class='dadosComp'>Latitude base 2</label> <input id='lat2' type='text' class='dadosComp'> <button class='dadosComp' id='botao'>Analisar lançamento</button> <div id='erro' class='dadosComp'></div>";
+});
+//Ação ao trocar para Análise Indivudal
+btnInd.addEventListener("click", () => {
+  document.querySelectorAll(".dadosComp").forEach((e) => e.remove());
+  document.querySelector(".dados").innerHTML =
+    "<label for='base' class='dadosInd'>Nome da Base</label><input id='base' type='text' class='dadosInd' /><label for='latitude' class='dadosInd'>Latitude</label><input id='latitude' type='text' class='dadosInd' /><button id='botao' class='dadosInd'>Analisar Lançamento</button><div id='erro' class='dadosInd'></div>";
 });
 
-btnInd.addEventListener("click", () => {
-  document.querySelectorAll(".dadosComp").forEach(e => e.remove());
-  document.querySelector(".dados").innerHTML = "<label id='base' class='dadosInd'>Nome Base</label> <input type='text' class='dadosInd'> <label id='lat' class='dadosInd'>Latitude</label> <input id='latitude' type='text' class='dadosInd'> <button class='dadosInd'>Analisar lançamento</button>"
+const btnAnalisar = document.getElementById("botao");
+let latitude = document.getElementById("latitude");
+const dados = document.querySelector(".dados");
+
+// Evento ao Clicar em Análise de lançamento
+dados.addEventListener("click", () => {
+  if (event.target.id === "botao") {
+    latitude = document.getElementById("latitude").value;
+    latitude = parseFloat(latitude);
+
+    if (latitude < -90 || latitude > 90) {
+      document.getElementById("latitude").value = "";
+      document.querySelector("#erro").innerHTML = "<p>Latitude inválida </p>";
+      document.querySelector("#erro").classList.add("erro");
+      document.getElementById("latitude").classList.add("erroCaixa");
+    }
+
+    // Contiunar daqui, ultimo commit 29/05 - 23:00
+    // Falta a lógica do erro aparecer na longitude base 2 da análise comparativa.
+  }
 });
