@@ -160,7 +160,7 @@ dados.addEventListener("click", (event) => {
           calcularEnergia(latitude);
 
         document.querySelectorAll(".dadosComp").forEach((e) => e.remove());
-        document.querySelector(".btnTroca").remove();
+        document.querySelector(".btsTroca").remove();
         document.querySelector(".dados").innerHTML =
           `<div> <h2>Resultado</h2><div class='resultComp'><div class='base1'><p>Base 1</p><p id='base'>Base: ${base}</p> <p id='latitude'>Latitude: ${latitude}</p><p>Energia estimada</p><p>${energia1.toFixed(2)} MJ/t</p> <p>Ganho de rotação</p> <p>${ganhoRotacao1.toFixed(2)} m/s</p><p>${eficiencia1}</p></div>
           <div class='base2'><p>Base 2</p><p id='base2'>Base: ${base2} </p> <p id='latitude2'>Latitude:${latitude2} </p><p>Energia estimada</p><p>${energia2.toFixed(2)} MJ/t</p> <p>Ganho de rotação</p> <p>${ganhoRotacao2.toFixed(2)} m/s</p><p>${eficiencia1}</p></div></div> <button id='btnReset'>Nova análise</button>`;
@@ -171,7 +171,7 @@ dados.addEventListener("click", (event) => {
       } else {
         const [energia, ganhoRotacao, eficiencia] = calcularEnergia(latitude);
         document.querySelectorAll(".dadosInd").forEach((e) => e.remove());
-        document.querySelector(".btnTroca").remove();
+        document.querySelector(".btsTroca").remove();
         document.querySelector(".dados").innerHTML =
           `<div class='resultInd'><h2>Resultado</h2> <p id='base'>${base}</p> <p id='latitude'>${latitude}</p><h2>Energia estimada</h2><p id='energia'>${energia.toFixed(2)} MJ/t</p><p>Ganho rotação</p> <p id='rotacao'>${ganhoRotacao.toFixed(2)} m/s</p> <p>${eficiencia}</p> <button id='btnReset'>Nova análise</button></div>`;
         btnReset.addEventListener("click", () => {

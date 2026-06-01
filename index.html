@@ -14,44 +14,58 @@
   </head>
   <body>
     <header>
-      <h1>OrbitFlow</h1>
-      <p>
-        Compare ou veja a eficiência energética de possíveis bases de lançamento
-        espacial a partir da geolocalização
-      </p>
+      <div class="cabecalho">
+        <h1>OrbitFlow</h1>
+        <p>
+          Compare ou veja a eficiência energética de possíveis bases de
+          lançamento espacial a partir da geolocalização
+        </p>
+      </div>
     </header>
     <main>
-      <section>
+      <section class="conteudoPrincipal">
         <div id="map" aria-label="Mapa OpenStreetMap"></div>
-        <div class="btnTroca">
-          <button id="btnInd">Análise individual</button>
-          <button id="btnComp">Análise Comparativa</button>
-        </div>
 
         <p id="coords">Clique no mapa para ver latitude e longitude.</p>
+        <div>
+          <div class="btsTroca">
+            <button id="btnInd">Análise individual</button>
+            <button id="btnComp">Análise Comparativa</button>
+          </div>
+          <div class="dados">
+            <div class="analiseInd">
+              <label for="base" class="dadosInd">Nome da Base</label>
+              <input id="base" type="text" class="dadosInd" />
+              <label for="latitude" class="dadosInd">Latitude</label>
 
-        <div class="dados">
-          <div class="analiseInd">
-            <label for="base" class="dadosInd">Nome da Base</label>
-            <input id="base" type="text" class="dadosInd" />
-            <label for="latitude" class="dadosInd">Latitude</label>
-            <input id="latitude" type="text" class="dadosInd" />
-            <button id="botao" class="dadosInd">Analisar Lançamento</button>
-            <div id="erro" class="dadosInd"></div>
+              <input id="latitude" type="text" class="dadosInd" />
+              <button id="botao" class="dadosInd">Analisar Lançamento</button>
+              <div id="erro" class="dadosInd"></div>
+            </div>
           </div>
         </div>
         <div class="dadosComp"></div>
       </section>
+    </main>
+    <footer>
       <section>
         <h2>Simplificações adotadas</h2>
         <ul>
-          <li>O modelo matemático considera o lançamento de cargas desde a superfície (nível do mar) até a órbita geoestacionária.</li>
-          <li>As perdas energéticas relativas à ineficiência aerodinâmica não são consideradas.</li>
-          <li>O modelo matemático considera a hipóteses de cargas que orbitam no mesmo sentido de rotação da terra.</li>
+          <li>
+            O modelo matemático considera o lançamento de cargas desde a
+            superfície (nível do mar) até a órbita geoestacionária.
+          </li>
+          <li>
+            As perdas energéticas relativas à ineficiência aerodinâmica não são
+            consideradas.
+          </li>
+          <li>
+            O modelo matemático considera a hipóteses de cargas que orbitam no
+            mesmo sentido de rotação da terra.
+          </li>
         </ul>
       </section>
-    </main>
-
+    </footer>
     <script
       src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
