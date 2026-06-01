@@ -87,3 +87,19 @@ section {
 #coords {
   display: none;
 }
+.analiseInd {
+  display: grid;
+  place-self: center;
+  gap: 25px;
+}
+
+.analiseComp {
+  display: grid;
+  place-self: center;
+  gap: 20px;
+}
+
+.resultComp {
+  display: grid;
+  grid-template-columns: auto auto;
+}
