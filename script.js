@@ -19,7 +19,7 @@ map.on("click", (event) => {
   coordsText.textContent = `Latitude: ${latFixed} | Longitude: ${lngFixed}`;
 
   //Preenchimento Latitude base 1 & Latitude base 2 - Analíse Comparativa
-  latitude = document.getElementById("latitude"); //Definido a constante para poder ser utilizada no evento exclusivo do analíse comparativa
+  const latitude = document.getElementById("latitude"); //Definido a constante para poder ser utilizada no evento exclusivo do analíse comparativa
   if (latitude.classList.contains("dadosComp")) {
     let latitude2 = document.getElementById("lat2").value;
     if (latitude.value === "") {
@@ -54,6 +54,7 @@ btnComp.addEventListener("click", () => {
   document.querySelector(".dados").innerHTML =
     "<label for='base' class='dadosComp'>Nome Base 1</label> <input type='text' id='base' class='dadosComp'> <label for='latitude' class='dadosComp'>Latitude base 1</label> <input id='latitude' type='text' class='dadosComp'> <label for='base2' class='dadosComp'>Nome Base 2</label> <input type='text' id='base2' class='dadosComp'> <label for='lat2' class='dadosComp'>Latitude base 2</label> <input id='lat2' type='text' class='dadosComp'> <button class='dadosComp' id='botao'>Analisar lançamento</button>  <div id='erro' class='dadosComp'></div>";
 });
+
 //Ação ao trocar para Análise Indivudal
 btnInd.addEventListener("click", () => {
   document.querySelectorAll(".dadosComp").forEach((e) => e.remove());
@@ -66,7 +67,7 @@ let latitude = document.getElementById("latitude");
 const dados = document.querySelector(".dados");
 
 // Evento ao Clicar em Análise de lançamento
-dados.addEventListener("click", () => {
+dados.addEventListener("click", (event) => {
   if (event.target.id === "botao") {
     latitude = document.getElementById("latitude").value;
     latitude = parseFloat(latitude);
@@ -103,7 +104,7 @@ dados.addEventListener("click", () => {
       }
     }
 
-    function calculoEnergia(latitude) {
+    function calcularEnergia(latitudeGraus) {
       const phi = latitudeGraus * (Math.PI / 180);
 
       const R_T = 6371000;
@@ -125,9 +126,10 @@ dados.addEventListener("click", () => {
       const economia = e1 - e2;
       return { e1, e2, economia };
     }
-
     // CONTINUAR DAQUI, LÓGICA, APRESENTAR RESULTADO.
 
-    //document.getElementById("dados").innerHTML = "<h2>Resultado</h2><p id='base'></p><p id='latitude'></p><h2>Energia estimada</h2><p id='energia'></p><p>Ganho rotação</p> <p id='rotacao'></p> " ;
-  }
+    document.querySelectorAll(".dadosInd").forEach((e) => e.remove());
+    document.querySelector(".dados").innerHTML = "<h2>Resultado</h2> <p id='base'> </p> <p id='latitude'> </p><h2>Energia estimada</h2><p id='energia'></p><p>Ganho rotação</p> <p id='rotacao'></p>";
+    console.log("passou Aqui");
+      }
 });
