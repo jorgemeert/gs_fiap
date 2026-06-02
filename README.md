@@ -2,7 +2,6 @@
 > **Global Solution — Web Development & Front-end Design | FIAP**
 
 🔗 **Deploy:** [orbit-flow-six.vercel.app](https://orbit-flow-six.vercel.app/)
-📁 **Repositório:** [github.com/jorgemeert/OrbitFlow](https://github.com/jorgemeert/OrbitFlow)
 
 ---
 
@@ -42,7 +41,6 @@ Tudo isso de forma simples, visual e direto ao ponto.
 ### Cores
 - **Preto `#1a1a1a`** — cor principal dos painéis de dados. Remete a ambientes de controle de missão e monitores técnicos, transmitindo seriedade e imersão no tema espacial.
 - **Vermelho `#dc2626`** — usado no botão de ação principal e na linha divisória do header. Cor de alerta e ação em sistemas críticos, reforçando a ideia de um lançamento.
-- **Verde `#22c55e`** — reservado para indicar eficiência positiva nos resultados. Contrasta diretamente com o fundo escuro e comunica sucesso de forma intuitiva.
 
 ### Tipografia
 - **Arial** — fonte sem serifa, legível e neutra. A escolha foi intencional: evita distração visual e mantém o foco nos dados, como em interfaces de sistemas técnicos reais.
