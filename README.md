@@ -1,8 +1,8 @@
 # 🚀 OrbitFlow
-
 > **Global Solution — Web Development & Front-end Design | FIAP**
 
-🔗 **Deploy:** [https://orbit-flow-six.vercel.app/](https://orbit-flow-six.vercel.app/)
+🔗 **Deploy:** [orbit-flow-six.vercel.app](https://orbit-flow-six.vercel.app/)
+📁 **Repositório:** [github.com/jorgemeert/OrbitFlow](https://github.com/jorgemeert/OrbitFlow)
 
 ---
 
@@ -34,6 +34,23 @@ O **OrbitFlow** é uma aplicação web interativa que permite:
 - 🏷️ **Classificar a eficiência** em níveis: Perfeita, Alta, Média, Baixa e Muito Baixa
 
 Tudo isso de forma simples, visual e direto ao ponto.
+
+---
+
+## 🎨 Escolhas de Design
+
+### Cores
+- **Preto `#1a1a1a`** — cor principal dos painéis de dados. Remete a ambientes de controle de missão e monitores técnicos, transmitindo seriedade e imersão no tema espacial.
+- **Vermelho `#dc2626`** — usado no botão de ação principal e na linha divisória do header. Cor de alerta e ação em sistemas críticos, reforçando a ideia de um lançamento.
+- **Verde `#22c55e`** — reservado para indicar eficiência positiva nos resultados. Contrasta diretamente com o fundo escuro e comunica sucesso de forma intuitiva.
+
+### Tipografia
+- **Arial** — fonte sem serifa, legível e neutra. A escolha foi intencional: evita distração visual e mantém o foco nos dados, como em interfaces de sistemas técnicos reais.
+
+### Estrutura da Interface
+- Layout em duas colunas (mapa + painel de dados) para que o usuário veja o mapa e os resultados simultaneamente, sem precisar rolar a página.
+- Alternância entre **Análise Individual** e **Análise Comparativa** via botões de modo, mantendo a interface limpa e sem sobrecarga de informação.
+- Rodapé dedicado às simplificações do modelo, separando claramente os dados operacionais das limitações técnicas.
 
 ---
 
