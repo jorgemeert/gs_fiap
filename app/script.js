@@ -4,7 +4,6 @@
 
 // Calcula energia necessária e ganho de rotação com base na latitude
 function calcularEnergia(latitude) {
-
   latitude = parseFloat(latitude);
 
   const phi = latitude * (Math.PI / 180);
@@ -16,7 +15,10 @@ function calcularEnergia(latitude) {
   const ganhoRotacao = omega * R_T * Math.cos(phi);
   const delta_vi = 2 * v_GEO * Math.sin(Math.abs(latitude) * (Math.PI / 180));
 
-  const energia = (0.5 * 1000 * Math.pow(v_GEO - ganhoRotacao + delta_vi, 2) + ((1000 * mu) / 2) * ((1 / R_T) - (1 / r_GEO))) * Math.pow(10, -6);
+  const energia =
+    (0.5 * 1000 * Math.pow(v_GEO - ganhoRotacao + delta_vi, 2) +
+      ((1000 * mu) / 2) * (1 / R_T - 1 / r_GEO)) *
+    Math.pow(10, -6);
 
   let eficiencia = "";
 
@@ -133,7 +135,12 @@ dados.addEventListener("click", (event) => {
     let erros = 0;
 
     // Validação de latitude base 1
-    if (latitude < -90 || latitude > 90 || !latitude) {
+    if (
+      latitude < -90 ||
+      latitude > 90 ||
+      latitude === "" ||
+      Number.isNaN(latitude)
+    ) {
       document.getElementById("latitude").value = "";
       document.querySelector("#erro").innerHTML =
         "<p>Latitude Base 1 inválida </p>";
@@ -143,7 +150,12 @@ dados.addEventListener("click", (event) => {
     } else if (document.querySelector("#lat2")) {
       // Validação de latitude base 2 (modo comparativo)
       const latitude2 = document.getElementById("lat2").value;
-      if (latitude2 < -90 || latitude2 > 90 || !latitude2) {
+      if (
+        latitude2 < -90 ||
+        latitude2 > 90 ||
+        latitude2 === "" ||
+        Number.isNaN(latitude2)
+      ) {
         document.getElementById("lat2").value = "";
         document.querySelector("#erro").innerHTML =
           "<p>Latitude Base 2 inválida </p>";
